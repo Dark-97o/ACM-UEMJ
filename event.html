@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link
       rel="icon"
-      href="https://lh3.googleusercontent.com/pw/AP1GczOGXYyqq1zlnQAUFliJ6t8_mshwZwl5ZjUsn8z0jciGI_6eo5ZyCKq1sxuKiaZWp0LMTcw-unqG6CJv8YIDVBt-WhD1opz0Jm-SwBZ8vQ9CgUfx4PK8qFgysKW8Q9IS1EFW1CVDcZ_4oshM076P4gLL=w572-h296-s-no-gm?authuser=0"
+      href="https://lh3.googleusercontent.com/pw/AP1GczMqtVnANrXwNH5NF1n8HPxJHV6vAsbUQVhrAvGXErB4-_mVrqS5l7Zyg1VqTqAALv-cYanqVrnnYvgfSZWFuhFsFh-rHjtZQaKflTvgJbvnj6XMmpUP0nBPVIxc9YaEQDE1q4vt0by_F5J2oCBh-Uno=w472-h212-s-no-gm?authuser=0"
       type="image/svg+xml"
     />
   <title>Events & Activities — ACM UEMJ</title>
@@ -64,7 +64,7 @@
       box-shadow: 0 8px 28px rgba(0,229,255,0.04);
     }
     .logo img{
-      height:86px; width:auto; display:block;
+      height:62px; width:auto; display:block;
       filter: brightness(1.45) contrast(1.2) saturate(1.05);
       border-radius:10px;
       background: rgba(0, 18, 22, 0.55);
@@ -189,6 +189,60 @@
       color:var(--accent);
     }
 
+    /* Organizer button (compact, non-invasive) */
+    .organizer-btn {
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:6px 10px;
+      border-radius:999px;            /* pill-shaped */
+      background: rgba(0,229,255,0.035);
+      border:1px solid rgba(0,229,255,0.06);
+      color: var(--muted);
+      font-size:0.9rem;
+      font-weight:600;
+      cursor:default;
+      min-height:34px;
+      transition: transform var(--transition), box-shadow var(--transition);
+      user-select:none;
+      margin-top:8px;
+      width:fit-content;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    }
+
+    /* favicon square inside button */
+    .organizer-btn .fav {
+      width:18px;
+      height:18px;
+      min-width:18px;
+      border-radius:4px;
+      overflow:hidden;
+      display:inline-block;
+      background-size:cover;
+      background-position:center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+      border:1px solid rgba(255,255,255,0.03);
+    }
+
+    /* organiser name text */
+    .organizer-btn .org-name {
+      color: var(--accent);
+      font-weight:700;
+      font-size:0.95rem;
+      white-space:nowrap;
+      text-overflow:ellipsis;
+      overflow:hidden;
+      max-width:220px;
+    }
+
+    /* place the button in the card: keep it subtle and above stats */
+    .event-card .organizer-wrapper {
+      margin-top:auto; /* try to keep towards bottom of card content */
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
     /* Gallery section */
     .gallery-section{
       padding: 80px 0 60px;
@@ -302,7 +356,7 @@
   <nav>
     <div class="logo">
       <div class="wrap">
-        <img src="https://lh3.googleusercontent.com/pw/AP1GczOGXYyqq1zlnQAUFliJ6t8_mshwZwl5ZjUsn8z0jciGI_6eo5ZyCKq1sxuKiaZWp0LMTcw-unqG6CJv8YIDVBt-WhD1opz0Jm-SwBZ8vQ9CgUfx4PK8qFgysKW8Q9IS1EFW1CVDcZ_4oshM076P4gLL=w572-h296-s-no-gm?authuser=0" alt="ACM logo">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczMqtVnANrXwNH5NF1n8HPxJHV6vAsbUQVhrAvGXErB4-_mVrqS5l7Zyg1VqTqAALv-cYanqVrnnYvgfSZWFuhFsFh-rHjtZQaKflTvgJbvnj6XMmpUP0nBPVIxc9YaEQDE1q4vt0by_F5J2oCBh-Uno=w472-h212-s-no-gm?authuser=0" alt="ACM logo">
       </div>
     </div>
     <ul class="nav-links">
@@ -322,77 +376,394 @@
 
     <!-- Events Section -->
     <section id="events" class="events-section">
-      <article class="event-card">
+
+      <article class="event-card" data-org-name="UEMJ-ACM Team">
         <div class="event-card-img">
-          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1600&q=80&auto=format&fit=crop" alt="AceHack 3.0">
+          <img src="https://lh3.googleusercontent.com/pw/AP1GczPHvL_KxQwDeMjzsknbtDVscGjHUKfhYnD3H-mYMc6A_dRHSkGfvQwfuuoJ9mB3GGUDzZU0LwxmQTPCJt7ryklCKicg67zaBYNNTQlH5oM1fkZmbe_doxgcQWN57mDLjIOWOeG-1AiZwXARaoXrjSHg=w843-h328-s-no-gm?authuser=0" alt="AceHack 3.0">
         </div>
         <div class="event-card-content">
-          <span class="event-date">March 2024</span>
-          <h3>AceHack 3.0 — National Hackathon</h3>
-          <p>Our flagship 36-hour national-level hackathon brought together over 500 innovators from 30+ cities across India. Teams competed to build innovative solutions addressing real-world challenges in areas like healthcare, education, and sustainability. The event featured mentorship sessions with industry experts, technical workshops, and exciting prizes worth ₹5 lakhs.</p>
+          <span class="event-date">September 12, 2025</span>
+          <h3>HackUEM 4.0 - 12 Hour Hackathon</h3>
+         <p>
+        RISE IN Presents Hack UEM 4.0, powered by Algorand and hosted at UEM Jaipur, was a dynamic 12-hour hackathon that brought together students to explore blockchain and Web3 development. Organized by the ACM Student Chapter in collaboration with the Tech Masters community, the event delivered an immersive learning experience through hands-on workshops, certification modules, and expert-led mentoring.
+        </p>
+
+        <p>
+        Participants built innovative blockchain solutions while competing for a prize pool of INR 25,000 in a highly competitive and collaborative environment. The event emphasized practical development, rapid prototyping, and real-world problem-solving.
+        </p>
+
+        <p>
+        Hack UEM 4.0 concluded as a major success, empowering students with industry-relevant skills, deeper insight into Web3 ecosystems, and confidence to tackle future technological challenges.
+        </p>
           <div class="event-stats">
             <div class="event-stat">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-              <span>500+ Participants</span>
+              <span>350+ Participants</span>
+            </div>
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+              <span>Open Innovation</span>
+            </div>
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+              <span>Multiple Tech Tracks</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="event-card" data-org-name="Mr. Bhupendra Chouhan">
+        <div class="event-card-img">
+          <img src="https://lh3.googleusercontent.com/pw/AP1GczObGVMzc1--l9odAKBwXplZnhzR0zoo0rs8jqJFC7zwJfekDn0iiVSWXZbcI3gjQPRmb7axn2jN7wgLdJ7ayJnDHIK-rGqBoXNlnJW5vGfalfJ_POFTtxOscIoNspVdt52MT9pCKTBcxdEdr3IfApBd=w1024-h537-s-no-gm?authuser=0" alt="AceHack 3.0">
+        </div>
+        <div class="event-card-content">
+          <span class="event-date">August 21-22, 2025</span>
+          <h3>Stacks Fullstack Bootcamp</h3>
+          <p>
+          This is where builders discover Web3, ideas turn into dApps, and learners transform into on-chain creators. At the Stacks Web3 Bootcamp, you won’t just study blockchain — you’ll deploy on it, break it, rebuild it, and push the limits of what’s possible. You’ll collaborate, you’ll innovate, and you’ll gain the skills to build real products on Bitcoin’s smart contract layer. The ecosystem, the mentorship, the momentum… it all starts here.
+          </p>
+          <div class="event-stats">
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+              <span>150+ Participants</span>
+            </div>
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+              <span>Stacks</span>
+            </div>
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+              <span>BlockChain</span>
+            </div>
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+              <span>Web3</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="event-card" data-org-name="UEMJ-ACM Team">
+        <div class="event-card-img">
+          <img src="https://lh3.googleusercontent.com/pw/AP1GczP6aYC-JKPBcvjswr8edqPmQrebbVwyb-aRn9kRmge5EtpcuFVg2Z5V1eF3UPXBajW8KCXnT9nloaWTD7jls7SiXLogAZjVIwffhQ2zi3ptiTU82DdGewYivgHQgIFoPSOrbftvVfU_r_nfG27pEg6K=w905-h437-s-no-gm?authuser=0" alt="AceHack 3.0">
+        </div>
+        <div class="event-card-content">
+          <span class="event-date">September 14, 2025</span>
+          <h3>Capture The Flag- TechFest 2025</h3>
+          <p>The ACM UEMJ Student Chapter organized CAPTURE THE FLAG (CTF) CHALLENGE, an exciting cybersecurity competition held under TechUtopia 2025 on 14th September 2025 from 9:30 AM to 12:30 PM in the Seminar Hall, First Floor. The event challenged participants to uncover hidden flags embedded within websites and source code, featuring 10 regular flags worth 1 point each and a secret flag worth 5 points, totaling 15 points to claim the championship title. Open to individuals or teams of up to two members, the competition emphasized ethical hacking, problem-solving, and logical reasoning in a simulated cybersecurity environment. Participants brought their own laptops and engaged in real-world hacking challenges that tested their technical acumen, creativity, and analytical skills. Winners were awarded certificates and prizes, making the event a thrilling and intellectually enriching highlight of *TechUtopia 2025*.</p>
+
+          <div class="event-stats">
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+              <span>20+ Participants</span>
+            </div>
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+              <span>Debugging</span>
+            </div>
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+              <span>Quiz</span>
+            </div>
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+              <span>HTML</span>
+            </div>
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+              <span>TechUtopia 2025</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="event-card" data-org-name="UEMJ-ACM Team">
+        <div class="event-card-img">
+          <img src="https://lh3.googleusercontent.com/pw/AP1GczMqJMYqgu1T7RlmEhI4Onw758B8rF8-DmzlmdlPMU-2bp4WojIKkmuJ942XRrPOJKSPW21J3c2soYcfaIJPaMtNtDsthAgyRi4g1l4ZjSrZbEYZIW7f28CszvggByQ-kP_QoICBFWFC9vor_8oncFC6=w1131-h489-s-no-gm?authuser=0" alt="AceHack 3.0">
+        </div>
+        <div class="event-card-content">
+          <span class="event-date">September 13, 2025</span>
+          <h3>Logic Ladder - TechFest 2025</h3>
+          <p>The ACM UEMJ Student Chapter organized LOGIC LADDER, a coding and logic-based competition under TechUtopia 2025, held on 13th September 2025 from 1:30 PM to 4:30 PM in the CSE Department’s Central Lab. The event featured three exciting rounds — a logical and technical quiz, a debugging challenge in C or Python, and a coding implementation round — designed to test participants’ analytical thinking, reasoning, and programming skills. Open to students from all departments and years, LOGIC LADDER encouraged both individual and team participation, fostering a spirit of problem-solving, creativity, and collaboration. Winners received certificates and exciting prizes, making it an engaging and intellectually stimulating highlight of TechUtopia 2025.</p>
+
+          <div class="event-stats">
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+              <span>20+ Participants</span>
+            </div>
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+              <span>Coding</span>
+            </div>
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+              <span>Debugging</span>
+            </div>
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+              <span>Quiz</span>
+            </div>
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+              <span>C / Python</span>
+            </div>
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+              <span>TechUtopia 2025</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="event-card" data-org-name="UEMJ-ACM Team">
+        <div class="event-card-img">
+          <img src="https://lh3.googleusercontent.com/pw/AP1GczNtkzpeUBXaTGjEY5dB6d8d0H4-gyOK1ouO1fF4lrA_-giLeSmZcHr_PlmngfUlNHBcRbp8zwf-kO5j9x8F5WD1OkTP2KB4VJLnbaUGdxQfhJKAWhOCHhbMpoQOKTc0raIGrYiT9ZcKpVYhxPkrjYCU=w915-h915-s-no-gm?authuser=0" alt="DSP Sessions">
+        </div>
+        <div class="event-card-content">
+          <span class="event-date">March 28-29, 2025</span>
+          <h3>AceHack 4.0 - 36 Hours Hackathon</h3>
+          <p>
+          AceHack 4.0, the flagship 36-hour hackathon of the UEM Jaipur ACM Student Chapter, brought together top student innovators from across the country for a high-intensity, problem-solving experience. Hosted at UEM Jaipur, the event featured multiple technical tracks—including AI/ML, Blockchain, App Development, IoT, and Open Innovation—encouraging participants to build impactful, scalable solutions.
+          </p>
+
+          <p>
+          The hackathon included expert mentoring sessions, lightning workshops, and continuous technical support, enabling teams to refine their ideas and produce high-quality prototypes within the 24-hour sprint. With strong participation and diverse project ideas, AceHack 4.0 showcased exceptional creativity and engineering talent.
+          </p>
+
+          <p>
+          The event concluded with standout submissions, industry-level judging, and a celebration of innovation and teamwork. AceHack 4.0 successfully empowered students with practical skills, real-world exposure, and opportunities to advance in their tech careers.
+          </p>
+
+
+          <div class="event-stats">
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+              <span>5000+ Registrations</span>
+            </div>
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+              <span>800+ Hackers</span>
+            </div>
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <span>50+ Cities</span>
+            </div>
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+              <span>Multiple Technologies</span>
+            </div>
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+              <span>Industry Leaders</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="event-card" data-org-name="UEMJ-ACM Team">
+        <div class="event-card-img">
+          <img src="https://lh3.googleusercontent.com/pw/AP1GczMvtENpAlGaT4oS75zsUsGUNjXeeB1XP0ZAivdV4l6TMtoMRC125CIPMeQ_CgnLNmIe10KIVk_4WaaMlTfNxwjr9tnWPMmUUrDMh-Wyll9uiTA9jt_6Y7HEdHwNiS5bTzJeOEBKvirAJblynM1Crl1t=w1472-h704-s-no-gm?authuser=0" alt="AceHack 3.0">
+        </div>
+        <div class="event-card-content">
+          <span class="event-date">March 12-13, 2025</span>
+          <h3>HackUEM 3.0 - 12 Hour Hackathon</h3>
+          <p>
+            Hack UEM 3.0, hosted by the UEMJ ACM Student Chapter at UEM Jaipur, was an intensive 12-hour hackathon designed to give students hands-on problem-solving experience across multiple technical tracks, including AI/ML, App Development, Cybersecurity, and Open Innovation. The event attracted enthusiastic participation from students eager to explore real-world development challenges.
+            </p>
+
+            <p>
+            Through guided mentoring sessions, rapid prototyping, and collaborative teamwork, participants built impactful projects that showcased creativity and technical depth. Workshops and expert interactions further strengthened their understanding of modern development tools and workflows.
+            </p>
+
+            <p>
+            Hack UEM 3.0 concluded successfully with standout projects and strong student engagement. The event enabled participants to gain practical skills, enhance their portfolios, and prepare for future opportunities in the tech industry.
+            </p>
+
+          <div class="event-stats">
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+              <span>350+ Participants</span>
+            </div>
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+              <span>Open Innovation</span>
+            </div>
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+              <span>Multiple Tech Tracks</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="event-card" data-org-name="Mr. Piyush Kumar Rai">
+        <div class="event-card-img">
+          <img src="https://lh3.googleusercontent.com/pw/AP1GczMYXOn9BjR3OYaMYvxoggT-Enr6DPSsNWkZ0pI86vLacE4SvqeONpCbkRPZCg4tZzF42Un0fqZCBcSVNYMabB4Y9D-CQ9yfy_I3oleF7ciIBgUEyyylhxZeuNn1ORPzInKle0cZAbRVUgFyKQezMyI2=w1080-h540-s-no-gm?authuser=0" alt="AceHack 3.0">
+        </div>
+        <div class="event-card-content">
+          <span class="event-date">August 23-24,, 2024</span>
+          <h3>Git & GitHub Workshop</h3>
+          <p>
+          The UEMJ ACM Student Chapter conducted a successful Git and GitHub workshop at UEM Jaipur, led by Mr. Piyush Kr Rai, Vice Chair of the chapter. The session focused on core version control concepts essential for modern software development.
+          </p>
+
+          <p>
+          Students learned key skills such as cloning repositories, managing files, pushing updates, and working with branches through a hands-on, problem-solving approach. Their active participation strengthened practical understanding.
+          </p>
+
+          <p>
+          We extend our thanks to Dr. G. Uma Devi and faculty coordinators—Prof. Sagarika Ghosh, Prof. Sourav Kumar, and Sanjay Dash—for their support. The workshop equipped students with valuable collaboration and version control skills that will benefit their academic and professional growth.
+          </p>
+
+          <div class="event-stats">
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+              <span>250+ Participants</span>
+            </div>
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+              <span>GitHub</span>
+            </div>
+            
+          </div>
+        </div>
+      </article>
+
+      <article class="event-card" data-org-name="UEMJ-ACM Team">
+        <div class="event-card-img">
+          <img src="https://lh3.googleusercontent.com/pw/AP1GczMxzR1unrnVGvOnPMstE_84Zd3Gm79u81tUUu5ZCdONyEe08BC5zTwxZMC-JeqZdxqGGFgJm6SZD-7OyewZNHxGUEBP1xBCib4Ct_jCnqRTUss_PmvfpoZabMQXJGQkwEqAyhOjv4tsK99baIiEgYbZ=w1830-h915-s-no-gm?authuser=0" alt="AceHack 3.0">
+        </div>
+        <div class="event-card-content">
+          <span class="event-date">April 6-7, 2024</span>
+          <h3>HackUEM 2.0 - 12 Hour Hackathon</h3>
+          <p>
+          RISE IN Presents Hack UEM 2.0, powered by Aptos and hosted at UEM Jaipur, was a 12-hour blockchain-focused hackathon organized by the ACM Student Chapter with the Tech Masters community. The event featured hands-on workshops, certification courses, and expert mentoring.
+          </p>
+
+          <p>
+          Students competed for a prize pool of INR 15,000 while building projects in blockchain and Web3. The hackathon successfully equipped participants with practical skills and industry exposure, preparing them for future technological challenges.
+          </p>
+          <div class="event-stats">
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+              <span>250+ Participants</span>
+            </div>
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+              <span>BlockChain</span>
+            </div>
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+              <span>Web3</span>
+            </div>
+            
+          </div>
+        </div>
+      </article>
+
+      <article class="event-card" data-org-name="UEMJ-ACM Team">
+        <div class="event-card-img">
+          <img src="https://lh3.googleusercontent.com/pw/AP1GczNJmIO2OMFP7b6A0FhQW0qOsABu0yeSCvejZenas_wm2zJkCkILcf2cnJqXhASqAioPDXCqs0PGrXsEeLAYtzadBMoDI8MZitcP4txxltfVyEGg8TZGLdG7VoskZopvvqeJHCHewUis6NRUwEQ0CjHD=w1080-h540-s-no-gm?authuser=0" alt="AceHack 3.0">
+        </div>
+        <div class="event-card-content">
+          <span class="event-date">April 6-7, 2024</span>
+          <h3>How to make a Smart Contract</h3>
+          <p>The Pre-Hackathon Session on ?How to Make a Smart Contract? held on 27th July was an engaging and educational event that successfully introduced participants to the fundamentals of blockchain technology. Under the banner "Blockchain Seekhna Hai, Seekha Denge!", the session provided hands-on guidance on creating smart contracts. Attendees not only gained practical insights but also received a free blockchain course with a certificate, enhancing their understanding and credentials in this cutting-edge field. The virtual event, hosted via Google Meet, was well-attended and highly appreciated by the participants for its valuable content and interactive</p>
+          <div class="event-stats">
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+              <span>100+ Learners</span>
+            </div>
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+              <span>BlockChain</span>
+            </div>
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+              <span>Web3</span>
+            </div>
+            
+          </div>
+        </div>
+      </article>
+
+      <article class="event-card" data-org-name="UEMJ-ACM Team">
+        <div class="event-card-img">
+          <img src="https://lh3.googleusercontent.com/pw/AP1GczPvJtgLhWHjOZzepYzRa005PturZbT5xdhLDP7nYBbUSkgDzMFvrNxmpI0UrCOfPdGXpbjnbSV0cTgjDxJKCM1-aNCtUxd_K14bqDxXBMq7bbfXpbnZrXpwO-RXHkq2b95C7AQ4cSep45OkQOPHUe4l=w1878-h915-s-no-gm?authuser=0" alt="DSP Sessions">
+        </div>
+        <div class="event-card-content">
+          <span class="event-date">April 6-7, 2024</span>
+          <h3>AceHack 3.0 - 24 Hours Hackathon</h3>
+          <p>
+          AceHack 3.0, a 24-hour offline hackathon organized by the UEM Jaipur ACM Student Chapter with the Eduhub Community, was held on April 6–7 at UEM Jaipur. Supported by major sponsors including Nordek, Orkes, Aptos, Polygon, Stellar, Devfolio, and others, the event offered a prize pool of over 30 lakhs with additional grants and bounties.
+          </p>
+
+          <p>
+          The hackathon received 3000+ registrations and hosted 600+ in-person hackers from 30+ Indian cities. More than 100 projects were built, tackling real-world problems. AceHack 3.0 also featured Rajasthan’s first 24-hour offline CTF challenge.
+          </p>
+
+          <p>
+          Top industry mentors and judges participated, including experts from Adobe, Google, Microsoft, LinkedIn, BluSmart, Nordek, and Rajasthan Police. The event highlighted innovation, creativity, and social impact, making it a highly rewarding experience for all participants.
+          </p>
+
+          <div class="event-stats">
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+              <span>3000+ Registrations</span>
+            </div>
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+              <span>600+ Hackers</span>
             </div>
             <div class="event-stat">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
               <span>30+ Cities</span>
             </div>
-          </div>
-        </div>
-      </article>
-
-      <article class="event-card">
-        <div class="event-card-img">
-          <img src="https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?w=1600&q=80&auto=format&fit=crop" alt="DSP Sessions">
-        </div>
-        <div class="event-card-content">
-          <span class="event-date">March 2024</span>
-          <h3>Distinguished Speaker Program (DSP)</h3>
-          <p>We hosted two impactful DSP sessions featuring renowned speakers from academia and industry. The sessions covered cutting-edge topics in artificial intelligence, machine learning, and career development in tech. With over 200 attendees, students gained valuable insights into emerging technologies and industry best practices.</p>
-          <div class="event-stats">
             <div class="event-stat">
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-              <span>200+ Attendees</span>
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+              <span>Multiple Technologies</span>
             </div>
             <div class="event-stat">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-              <span>Industry Experts</span>
+              <span>Industry Leaders</span>
             </div>
           </div>
         </div>
       </article>
 
-      <article class="event-card">
+      <article class="event-card" data-org-name="Prof. Dr. Tanmoy Chakraborty">
         <div class="event-card-img">
-          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1600&q=80&auto=format&fit=crop" alt="Coding Competitions">
+          <img src="https://lh3.googleusercontent.com/pw/AP1GczMdhqWBkRTL2yubbcbPcY2K9OEW0En12wzkjb5lyiEr8sPUjmgdvEkoNAke75fCij2ADvXplYGWGhWKw4pPefTgWCRacgVyIYJw19sN_KZ_OOAQxyM3uXXLzxD3MmWCHNCp49LBUJxLsSE1vlV46Wzy=w938-h915-s-no-gm?authuser=0" alt="Coding Competitions">
         </div>
         <div class="event-card-content">
-          <span class="event-date">February - March 2024</span>
-          <h3>Coding Competitions Series</h3>
-          <p>Monthly coding competitions testing algorithmic thinking and problem-solving skills. These competitive programming events attracted over 100 participants who tackled challenging problems across various difficulty levels. Winners received certificates and exciting prizes while gaining valuable experience for technical interviews.</p>
+          <span class="event-date">February 22, 2024</span>
+          <h3>Evolution of Large Language Models: The Good, The Bad and The Opportunities</h3>
+          <p>This insightful session featured the esteemed Prof. (Dr.) Tanmoy Chakraborty from IIT Delhi delved into the evolution of large language models. The program explored the benefits, drawbacks, and opportunities presented by these models in today's technological landscape. The event provided valuable insights and engagement with a renowned expert in the field.</p>
           <div class="event-stats">
             <div class="event-stat">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-              <span>100+ Coders</span>
+              <span>200+ Learners</span>
             </div>
             <div class="event-stat">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
-              <span>Monthly Events</span>
+              <span>Machine Learning</span>
+            </div>
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+              <span>LLM's</span>
             </div>
           </div>
         </div>
       </article>
 
-      <article class="event-card">
+      <article class="event-card" data-org-name="Prof. Dr. Sanjay Mishra">
         <div class="event-card-img">
-          <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1600&q=80&auto=format&fit=crop" alt="HackUEM">
+          <img src="https://lh3.googleusercontent.com/pw/AP1GczPVx1_idC5_yKuYVOi7mDUNwzOJExvrCOQw89MRynszEECLVSRVdRCP0GXcm2J4G0U9YCRAewsAQPSJbvhOvE7zFJlkcw2jwXz6SCzjYi-8My2JvBw9C5VIUiY4v13KLLQLQ8L7p2Ja8Tms7IKQEr0g=w915-h915-s-no-gm?authuser=0" alt="HackUEM">
         </div>
         <div class="event-card-content">
-          <span class="event-date">September - October 2023</span>
-          <h3>Coding Bootcamp & HackUEM</h3>
-          <p>An intensive 6-week bootcamp preparing students for competitive programming challenges, followed by our internal mini-hackathon HackUEM. Over 70 participants learned data structures, algorithms, and problem-solving techniques through hands-on sessions. The bootcamp culminated in an exciting 12-hour hackathon where teams built innovative projects.</p>
+          <span class="event-date">February 22, 2024</span>
+          <h3>DSP - Application of AI for Sustainable development in developing countries</h3>
+          <p>The ACM Distinguished Speaker Program on Sustainable AI, presented by Sanjay Misra on 22nd March 2024 at UEM Jaipur, was a thought-provoking event organized by the ACM chapter. The session delved into the concept of sustainable AI, exploring how artificial intelligence can be developed and deployed in ways that are environmentally responsible and socially equitable. Sanjay Misra, a leading expert in the field, shared valuable insights on the intersection of AI and sustainability, discussing current challenges and future directions. The event was well-received, offering participants a deeper understanding of the importance of sustainable practices in AI development.</p>
           <div class="event-stats">
             <div class="event-stat">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
@@ -400,42 +771,65 @@
             </div>
             <div class="event-stat">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-              <span>6 Weeks Training</span>
+              <span>Artificial Intelligence</span>
             </div>
           </div>
         </div>
       </article>
 
-      <article class="event-card">
+      <article class="event-card" data-org-name="Mr. Rohit Agarwal">
         <div class="event-card-img">
-          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&q=80&auto=format&fit=crop" alt="Tech Workshops">
+          <img src="https://lh3.googleusercontent.com/pw/AP1GczN5spqBU-fhItaH8kEMUo0xPHHo7wayQv1GfvW9O3HN2LzWxdev0aVdgpIWh4I_6ogp4CkdArAT5WwrvISoFaTchiy031LoYd5sORhcsuQt7FlvWQowBRFi9rdK_RsAEcmVmYmXoSXsZWhppq2XDyUQ=w904-h904-s-no-gm?authuser=0" alt="Tech Workshops">
         </div>
         <div class="event-card-content">
-          <span class="event-date">September 2023</span>
-          <h3>ACM Distinguished Speaker Program</h3>
-          <p>Our first DSP session featured an accomplished speaker discussing the future of computing and career opportunities in technology. The interactive session covered emerging trends, research opportunities, and practical advice for students aspiring to excel in the tech industry. The event fostered meaningful discussions and networking among 200+ students and faculty.</p>
+          <span class="event-date">SFebruary 14, 2024</span>
+          <h3>Workshop on Integrating Machine Learning in Mobile Applications using Flutter</h3>
+          <p>
+          UEM Jaipur ACM, along with Codesta and GDSC, conducted a free 3-day workshop on integrating Machine Learning into Flutter-based mobile apps, led by Mr. Rohit Agarwal (SDE-3, GeekyAunts; UEMJ alumnus).
+          </p>
+
+          <p>
+          Day 1 covered Flutter basics, widgets, APIs, and career opportunities. Day 2 focused on widget trees, UI creation, API integration, and JSON-to-Dart conversion. Day 3 introduced ML concepts, Firebase integration, and building a weather app, with all students uploading projects to GitHub.
+          </p>
+
+          <p>
+          A paid internship opportunity from Setstate Technologies was offered; one student was selected, and eight progressed to the next round. The workshop was fully interactive and provided strong hands-on learning.
+          </p>
+
           <div class="event-stats">
             <div class="event-stat">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-              <span>200+ Attendees</span>
+              <span>100+ Attendees</span>
             </div>
             <div class="event-stat">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
               <span>Interactive Session</span>
             </div>
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+              <span>Hands-on Learning</span>
+            </div>
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+              <span>Internship Oppurtinuity</span>
+            </div>
           </div>
         </div>
       </article>
 
-      <article class="event-card">
+      <article class="event-card" data-org-name="ACM-UEMJ Team">
         <div class="event-card-img">
-          <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=1600&q=80&auto=format&fit=crop" alt="Web Development Workshop">
+          <img src="https://lh3.googleusercontent.com/pw/AP1GczNPER2Qd5REHNb0xJmtrlYpgUTKMBUd2_RxdylIz1GPO2zt0YSFXWzkgefit_8hjDhBgfHHxieeYOAPECOUweSWkDNNvQaJBlIhHMX2skPbrHSgBeRo3UUY27RTchrJexkkKGc_KL-9sBz-yFFhSvxu=w734-h560-s-no-gm?authuser=0" alt="Web Development Workshop">
         </div>
         <div class="event-card-content">
-          <span class="event-date">Ongoing</span>
-          <h3>Technical Workshops & Skill Development</h3>
-          <p>Regular hands-on workshops covering diverse topics including web development, machine learning, cloud computing, and mobile app development. These sessions provide practical experience with industry-standard tools and technologies. Students build real projects and receive guidance from experienced mentors and industry professionals.</p>
+          <span class="event-date">March 14, 2024</span>
+          <h3>Coding Competition</h3>
+          <p>University-level coding competition for all-year students organized by ACM student chapter association with codesta coding club, iiC, IQAC of UEM Jaipur. Coding contest hosted on Hackerrank platform. Toal 105 participants competed among themselves</p>
           <div class="event-stats">
+            <div class="event-stat">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+              <span>50+ Attendees</span>
+            </div>
             <div class="event-stat">
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
               <span>Hands-on Learning</span>
@@ -538,6 +932,51 @@
       const container = document.getElementById('bgAnimation');
       if(!container) return;
       
+      (function(){
+        // get favicon from page head (fall back to a tiny data-URI square if missing)
+        const iconLink = document.querySelector('link[rel~="icon"]');
+        const favicon = "https://img.icons8.com/ios-filled/50/00e5ff/user.png";
+
+        const cards = document.querySelectorAll('.event-card');
+        cards.forEach(card => {
+          // guard: skip if already injected
+          if(card.querySelector('.organizer-btn')) return;
+
+          // read data attribute
+          const name = card.dataset.orgName || card.dataset.orgname || '';
+          if(!name) return; // nothing to show
+
+          // create wrapper and button
+          const wrapper = document.createElement('div');
+          wrapper.className = 'organizer-wrapper';
+
+          const btn = document.createElement('div');
+          btn.className = 'organizer-btn';
+          btn.setAttribute('aria-hidden','false');
+          btn.setAttribute('title','Organiser: ' + name);
+
+          const fav = document.createElement('span');
+          fav.className = 'fav';
+          // use background-image so it's purely decorative and lightweight
+          fav.style.backgroundImage = `url("${favicon}")`;
+
+          const nm = document.createElement('span');
+          nm.className = 'org-name';
+          nm.textContent = name;
+
+          btn.appendChild(fav);
+          btn.appendChild(nm);
+          wrapper.appendChild(btn);
+
+          // insert the wrapper into the card content, before .event-stats if present
+          const content = card.querySelector('.event-card-content');
+          if(!content) return;
+          const stats = content.querySelector('.event-stats');
+          if(stats) content.insertBefore(wrapper, stats);
+          else content.appendChild(wrapper);
+        });
+      })();
+
       function build(){
         while(container.firstChild) container.removeChild(container.firstChild);
         const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
