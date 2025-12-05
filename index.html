@@ -179,7 +179,7 @@
       height:100%;       /* fill hero vertical space */
       z-index:-30;       /* behind content and decorative bg */
       pointer-events:none;
-      background-image: url('https://lh3.googleusercontent.com/pw/AP1GczM-kw-KqyUzRiKlqBC7hxpM414STG7QzTC42hDb3sFSDB7oPM0U2ZoXXHPa5TDj4esKD0tFo99kJ5ASPD-BH9DwCv8LpQyJerUnf3m0NbVem3nBGMnoy6MdLFbPmIJk-KTr59YThb_cfcVj9DXRE_Mv=w1639-h919-s-no-gm?authuser=0');
+      background-image: url('https://lh3.googleusercontent.com/pw/AP1GczOtQ1km7pBQ-RPV42NgHqjWBGDnB8QbYdW6cwxjoVAsH0DoJu_C7hoR0hCV5qT9PpoJoqJU8ob9t4aZMZIRmytdeNU7g1xtySoYnUAKbU45223reUQYEKw3hRjIi3lpAIdW2F9zHIaEBxYFah1oSYB8=w1503-h915-s-no-gm?authuser=0');
       background-position:center center;
       background-size: cover; /* ensures image covers hero and fits width */
       opacity: var(--hero-opacity);
@@ -187,7 +187,7 @@
       transition: opacity 520ms ease, transform 1100ms ease;
       will-change: transform, opacity;
     }
-    .hero-overlay{ position:absolute; inset:0; z-index:-29; background:linear-gradient(180deg, rgba(2,6,10,0.18), rgba(2,6,10,0.28)); pointer-events:none; border-bottom-left-radius:0; border-bottom-right-radius:0; }
+    .hero-overlay{ position:absolute; inset:0; left: -65px; right: -65px; width: auto;z-index:-29; background:linear-gradient(180deg, rgba(2,6,10,0.18), rgba(2,6,10,0.28)); pointer-events:none; border-bottom-left-radius:0; border-bottom-right-radius:0; }
 
     .hero-content{ max-width:1200px; margin:0 auto; padding:28px; position:relative; z-index:21; }
     .hero h2{ font-size: clamp(2rem, 6vw, 4.2rem); color:var(--accent); letter-spacing:-0.8px; margin-bottom:12px; line-height:1.02; display:inline-block; padding:12px 16px; border-radius:10px; background: linear-gradient(180deg, rgba(0,229,255,0.01), rgba(0,229,255,0.01)); text-shadow:0 6px 40px rgba(0,229,255,0.06); }
@@ -322,6 +322,7 @@
         <img src="https://lh3.googleusercontent.com/pw/AP1GczOGXYyqq1zlnQAUFliJ6t8_mshwZwl5ZjUsn8z0jciGI_6eo5ZyCKq1sxuKiaZWp0LMTcw-unqG6CJv8YIDVBt-WhD1opz0Jm-SwBZ8vQ9CgUfx4PK8qFgysKW8Q9IS1EFW1CVDcZ_4oshM076P4gLL=w572-h296-s-no-gm?authuser=0" alt="ACM logo">
       </div>
     </div>
+    
     <ul class="nav-links" role="menubar" aria-label="Main menu">
       <li><a href="index.html">Home</a></li>
       <li><a href="event.html">Events</a></li>
