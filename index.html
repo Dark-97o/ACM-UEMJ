@@ -149,10 +149,69 @@
     }
 
     /* compact mobile adjustments */
+    /* Hamburger menu button */
+    .hamburger{
+      display:none;
+      flex-direction:column;
+      gap:5px;
+      background:transparent;
+      border:none;
+      cursor:pointer;
+      padding:8px;
+      z-index:1101;
+      border-radius:8px;
+      transition: background var(--transition);
+    }
+    .hamburger:hover{
+      background: rgba(0,229,255,0.06);
+    }
+    .hamburger span{
+      display:block;
+      width:26px;
+      height:3px;
+      background:var(--accent);
+      border-radius:2px;
+      transition: transform var(--transition), opacity var(--transition);
+    }
+    .hamburger.active span:nth-child(1){ transform: translateY(8px) rotate(45deg); }
+    .hamburger.active span:nth-child(2){ opacity:0; }
+    .hamburger.active span:nth-child(3){ transform: translateY(-8px) rotate(-45deg); }
+
+    /* compact mobile adjustments */
     @media (max-width:720px){
       nav{ padding:8px 6%; }
       .logo img{ height:48px; }
-      .nav-links a{ padding:8px 10px; font-size:0.92rem; }
+      .hamburger{ display:flex; }
+      .nav-links{
+        position:fixed;
+        top:var(--nav-height);
+        left:0;
+        right:0;
+        flex-direction:column;
+        background: rgba(6,8,12,0.98);
+        backdrop-filter: blur(10px);
+        padding:20px;
+        gap:0;
+        transform: translateY(-100%);
+        opacity:0;
+        pointer-events:none;
+        transition: transform var(--transition), opacity var(--transition);
+        box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+        border-bottom: 1px solid rgba(0,229,255,0.06);
+      }
+      .nav-links.active{
+        transform: translateY(0);
+        opacity:1;
+        pointer-events:all;
+      }
+      .nav-links li{ width:100%; }
+      .nav-links a{ 
+        padding:14px 12px; 
+        font-size:1rem;
+        display:block;
+        border-bottom: 1px solid rgba(0,229,255,0.04);
+      }
+      .nav-links a:last-child{ border-bottom:none; }
     }
 
     /* Wrapper */
@@ -323,7 +382,13 @@
       </div>
     </div>
     
-    <ul class="nav-links" role="menubar" aria-label="Main menu">
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <ul class="nav-links" id="navLinks" role="menubar" aria-label="Main menu">
       <li><a href="index.html">Home</a></li>
       <li><a href="event.html">Events</a></li>
       <li><a href="team.html">Team</a></li>
@@ -785,6 +850,7 @@
     })();
 
     /* Small perf fallback: lower hero opacity on low-end devices */
+    /* Small perf fallback: lower hero opacity on low-end devices */
     (function(){
       try {
         const cores = navigator.hardwareConcurrency || 4;
@@ -792,6 +858,38 @@
         if(cores <= 2 || mobile) document.documentElement.style.setProperty('--hero-opacity','0.28');
       } catch(e){}
     })();
+
+    /* Hamburger menu toggle */
+    (function(){
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.getElementById('navLinks');
+      if(!hamburger || !navLinks) return;
+
+      hamburger.addEventListener('click', function(){
+        const isActive = this.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        this.setAttribute('aria-expanded', isActive);
+      });
+
+      // Close menu when clicking a link
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('active');
+          navLinks.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', function(e){
+        if(!hamburger.contains(e.target) && !navLinks.contains(e.target)){
+          hamburger.classList.remove('active');
+          navLinks.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+
   </script>
 </body>
 </html>
