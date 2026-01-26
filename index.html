@@ -57,19 +57,11 @@
       box-shadow: 0 18px 46px rgba(0,0,0,0.6);
     }
     .logo{ display:flex; align-items:center; gap:14px; }
-    /* .logo .wrap{
-      display:flex; align-items:center; gap:12px; padding:6px 10px; border-radius:10px;
-      background: linear-gradient(180deg, rgba(0,12,15,0.45), rgba(0,12,15,0.18));
-      border:1px solid rgba(255,255,255,0.02);
-      box-shadow: 0 8px 28px rgba(0,229,255,0.04);
-    } */
     .logo img{
       height:62px; width:auto; display:block;
       filter: brightness(1.45) contrast(1.2) saturate(1.05);
       border-radius:10px;
-      /* background: rgba(0, 18, 22, 0.55); */
       padding:1px;
-      /* box-shadow: 0 10px 28px rgba(0,229,255,0.06); */
     }
     .nav-links{
       display:flex; gap:18px; list-style:none; align-items:center;
@@ -113,6 +105,53 @@
     .hamburger.active span:nth-child(1){ transform: translateY(8px) rotate(45deg); }
     .hamburger.active span:nth-child(2){ opacity:0; }
     .hamburger.active span:nth-child(3){ transform: translateY(-8px) rotate(-45deg); }
+
+    /* Floating Announcement Box */
+    .announcement-box{
+      position: absolute;
+      top: 35px;
+      right: 25px;
+      background: linear-gradient(135deg, #0e0b0b, #0e0b0b);
+      border: 2px solid #52ceff;
+      border-radius: 12px;
+      padding: 2px 11px;
+      box-shadow: 0 8px 32px rgba(255, 23, 68, 0.4);
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      animation: blink 2s ease-in-out infinite;
+      max-width: 320px;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; box-shadow: 0 8px 12px rgba(0, 102, 255, 0.7); }
+      50% { opacity: 0.85; box-shadow: 0 8px 28px rgba(23, 65, 255, 0.7); }
+    }
+    
+    .announcement-box .icon{
+      width: 140px;
+      height: 80px;
+      flex-shrink: 0;
+      object-fit: contain;
+      background: #0e0b0b;
+      padding: 5px 12px;
+    }
+
+    /* .announcement-box .icon::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 5); 
+      pointer-events: none;
+    } */
+
+    .announcement-box .text{
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.7rem;
+      line-height: 1.4;
+    }
 
     /* Main container */
     .site-wrap{
@@ -252,6 +291,119 @@
       color: var(--muted);
       line-height: 1.7;
       font-size: 1.05rem;
+    }
+
+    /* UPCOMING EVENT CARD */
+    .upcoming-event-card{
+      background: linear-gradient(180deg, rgba(7,10,14,0.88), rgba(9,14,20,0.72));
+      border: 2px solid rgba(0,229,255,0.25);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 12px 48px rgba(0,229,255,0.15);
+      margin-bottom: 60px;
+      max-width: 1400px;
+      margin-left: auto;
+      margin-right: auto;
+      display: grid;
+      grid-template-columns: 450px 1fr;
+      gap: 0;
+      transition: all var(--transition);
+    }
+    .upcoming-event-card:hover{
+      transform: translateY(-8px);
+      box-shadow: 0 20px 64px rgba(0,229,255,0.25);
+      border-color: rgba(0,229,255,0.4);
+    }
+    .upcoming-event-poster{
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+    .upcoming-event-poster img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .upcoming-event-card:hover .upcoming-event-poster img{
+      transform: scale(1.05);
+    }
+    .upcoming-event-details{
+      padding: 50px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .upcoming-badge{
+      display: inline-block;
+      padding: 8px 20px;
+      background: linear-gradient(135deg, #ff1744, #d50000);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 50px;
+      margin-bottom: 20px;
+      width: fit-content;
+      box-shadow: 0 4px 16px rgba(255, 23, 68, 0.4);
+    }
+    .upcoming-event-title{
+      font-size: 2.2rem;
+      color: var(--accent);
+      font-weight: 800;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .upcoming-event-date{
+      font-size: 1.1rem;
+      color: #ffab00;
+      font-weight: 600;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .upcoming-event-date svg{
+      width: 20px;
+      height: 20px;
+    }
+    .upcoming-event-description{
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 1.05rem;
+      margin-bottom: 30px;
+    }
+    .upcoming-speaker{
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(0,229,255,0.1);
+    }
+    .upcoming-speaker-img{
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(0,229,255,0.3);
+      box-shadow: 0 4px 16px rgba(0,229,255,0.2);
+    }
+    .upcoming-speaker-info{
+      flex: 1;
+    }
+    .upcoming-speaker-label{
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+    .upcoming-speaker-name{
+      font-size: 1.3rem;
+      color: var(--accent);
+      font-weight: 700;
     }
 
     /* EVENTS CAROUSEL */
@@ -426,6 +578,24 @@
       .carousel-track{
         justify-content: flex-start;
       }
+      .upcoming-event-card{
+        grid-template-columns: 1fr;
+      }
+      .upcoming-event-poster{
+        height: 350px;
+      }
+      .announcement-box{
+        top: 80px;
+        right: 20px;
+        max-width: 260px;
+        padding: 16px 20px;
+      }
+      .announcement-box .icon{
+        font-size: 24px;
+      }
+      .announcement-box .text{
+        font-size: 0.9rem;
+      }
     }
     @media (max-width:720px){
       .hamburger{ display:flex; }
@@ -488,6 +658,32 @@
       .event-card-small{
         flex: 0 0 280px;
       }
+      .upcoming-event-details{
+        padding: 30px 24px;
+      }
+      .upcoming-event-title{
+        font-size: 1.6rem;
+      }
+      .announcement-box{
+        position: relative;
+        top: auto;
+        right: auto;
+        margin-top: -60px;
+        margin-bottom: 20px;
+        max-width: 90%;
+      }
+
+      .announcement-box .icon{
+        width: 120px;
+        height: 60px;
+        padding: 0px 0px;
+      }
+
+      .announcement-box .text{
+        color: #ffffff;
+        font-size: 70%;
+      }
+
     }
   </style>
 </head>
@@ -520,6 +716,19 @@
   <div class="site-wrap">
     <!-- HERO SECTION -->
     <section class="hero-section">
+      <!-- Floating Announcement Box -->
+      <a href="#dsp-seminar" style="text-decoration: none; color: inherit;">
+        <div class="announcement-box">
+          <img 
+            src="https://lh3.googleusercontent.com/pw/AP1GczNOMnYCiqQCt49RTBNLu0vsp7rMBPVR1zbzGL7RXHPpIsSoxFPHR1RnZtS5QxuDY4W4_FBDsF2njTU31CDoAcB369xNi3Nx1BbfZtL5jDoCG-mepGMfIZQz-t0C20NagFMOJhQnDoGmvh_EYN6y1ceK=w1080-h610-s-no-gm?authuser=0"
+            alt="Announcement"
+            class="icon"
+          >
+          <!-- <div class="text">NEW EVENT! Distinguished Speaker Program</div> -->
+        </div>
+      </a>
+
+
       <div class="hero-content">
         <h1 class="hero-title" id="heroTitle">ACM UEMJ Student Chapter</h1>
         <div class="hero-pill">University of Engineering and Management Jaipur - community events, workshops and hands-on learning.</div><br>
@@ -573,7 +782,7 @@
             <li><strong>4-Star Physiotherapy Department:</strong> Rated by the Indian Association of Physiotherapists for excellence in academics and clinical training.</li>
             <li><strong>Pandemic Academic Continuity:</strong> Ensured uninterrupted learning, allowing students to graduate on time.</li>
             <li><strong>Modern Campus:</strong> A 32-acre campus with state-of-the-art facilities and a strong innovation ecosystem.</li>
-            <li><strong>Global Alumni Presence:</strong> Graduates working in top companies worldwide, reflecting the university’s strong placement performance.</li>
+            <li><strong>Global Alumni Presence:</strong> Graduates working in top companies worldwide, reflecting the university's strong placement performance.</li>
           </ul>
 
           <p>
@@ -588,6 +797,35 @@
       <h2 class="section-title">Our Events & Activities</h2>
       <p class="section-subtitle">Discover the amazing events organised by ACM Student Chapter UEMJ</p>
       
+      <!-- UPCOMING EVENT CARD -->
+      <div class="upcoming-event-card" id="dsp-seminar">
+        <div class="upcoming-event-poster">
+          <img src="https://lh3.googleusercontent.com/pw/AP1GczP2o9CgGHmZ1QpR0XRqX4ft0Qf3Jc2Ptw58ipVFqrOFdW0exMLEMVXgwc-isWlDOAYrNj16VqB4UUXQeaUOaUjSEMQahRS2heBmYLlznqF8g5km3A-UpR1aOUtLh8QoCdmwosFdS5YmPrBM31JGAsiC=w708-h915-s-no-gm?authuser=0" alt="Upcoming Event Poster">
+        </div>
+        <div class="upcoming-event-details">
+          <div>
+            <div class="upcoming-badge">UPCOMING EVENT</div>
+            <h3 class="upcoming-event-title">Distinguished Speaker Program 2025</h3>
+            <div class="upcoming-event-date">  
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+              </svg>
+              February 23, 2026
+            </div>
+            <p class="upcoming-event-description">
+              Join us for an insightful ACM Distinguished Speaker Program (DSP) Seminar featuring an eminent industry leader in Data Science. The session will explore the journey from raw data to impactful data products, blending academic perspective with real-world industry experience. Gain valuable insights into data-driven innovation, career pathways, and emerging trends while interacting with an accomplished professional shaping the future of data science.
+            </p>
+          </div>
+          <div class="upcoming-speaker">
+            <img src="https://lh3.googleusercontent.com/pw/AP1GczOCIB-w8XFDoJCZOrZ7rdrI-Xz-OWhAsi7G4rIVBNBj3PvgHThRrUvzq13PGexrY1DXmVS1PaMQjKc0Xhq0IjWiVG4hPvfUDgnYnymuHrPm0nITArm_VkpChE-07ZMlFuD4F1R-LkkVZO29uv2SEp2K=w332-h333-s-no-gm?authuser=0" alt="Speaker" class="upcoming-speaker-img">
+            <div class="upcoming-speaker-info">
+              <div class="upcoming-speaker-label">Keynote Speaker</div>
+              <div class="upcoming-speaker-name">Dr. Neha Sharma</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="events-carousel">
         <div class="carousel-wrapper">
           <div class="carousel-track" id="carouselTrack">
@@ -742,7 +980,7 @@
               </svg>
               Location
             </h3>
-            <p>University of Engineering & Management<br>“GURUKUL”, 6 kms from Chomu on Sikar Road (NH-11), <br>Rajasthan 303807, India</p>
+            <p>University of Engineering & Management<br>"GURUKUL", 6 kms from Chomu on Sikar Road (NH-11), <br>Rajasthan 303807, India</p>
           </div>
           
           <div class="contact-item">
@@ -858,35 +1096,6 @@
       build();
       let t;
       window.addEventListener('resize', ()=>{ clearTimeout(t); t = setTimeout(build,260); }, { passive:true });
-    })();
-
-    /* Hamburger menu toggle */
-    (function(){
-      const hamburger = document.getElementById('hamburger');
-      const navLinks = document.getElementById('navLinks');
-      if(!hamburger || !navLinks) return;
-
-      hamburger.addEventListener('click', function(){
-        const isActive = this.classList.toggle('active');
-        navLinks.classList.toggle('active');
-        this.setAttribute('aria-expanded', isActive);
-      });
-
-      navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          hamburger.classList.remove('active');
-          navLinks.classList.remove('active');
-          hamburger.setAttribute('aria-expanded', 'false');
-        });
-      });
-
-      document.addEventListener('click', function(e){
-        if(!hamburger.contains(e.target) && !navLinks.contains(e.target)){
-          hamburger.classList.remove('active');
-          navLinks.classList.remove('active');
-          hamburger.setAttribute('aria-expanded', 'false');
-        }
-      });
     })();
 
     /* Carousel functionality */
