@@ -1048,6 +1048,46 @@
 
   <!-- SCRIPTS -->
   <script>
+    /* Hamburger menu toggle */
+    (function(){
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.getElementById('navLinks');
+      
+      if(!hamburger || !navLinks) return;
+      
+      hamburger.addEventListener('click', () => {
+        const isActive = navLinks.classList.contains('active');
+        
+        if(isActive){
+          navLinks.classList.remove('active');
+          hamburger.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', 'false');
+        } else {
+          navLinks.classList.add('active');
+          hamburger.classList.add('active');
+          hamburger.setAttribute('aria-expanded', 'true');
+        }
+      });
+      
+      // Close menu when clicking a link
+      const links = navLinks.querySelectorAll('a');
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('active');
+          hamburger.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', 'false');
+        });
+      });
+      
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        if(!hamburger.contains(e.target) && !navLinks.contains(e.target)){
+          navLinks.classList.remove('active');
+          hamburger.classList.remove('active');
+          hamburger.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
     /* Background animation */
     (function(){
       const container = document.getElementById('bgAnimation');
